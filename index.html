@@ -4,517 +4,517 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stay aware.</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='black'/><text x='50' y='62' text-anchor='middle' font-size='44' fill='white' font-family='Arial'>S.</text></svg>">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   color-scheme:light;
-  --bg:#f8f4ec;
-  --panel:#fffdf8;
-  --panel-soft:rgba(255,253,248,.78);
-  --ink:#202126;
-  --muted:#77706a;
-  --quiet:#a79e94;
-  --line:rgba(38,34,29,.12);
-  --line-strong:rgba(38,34,29,.2);
-  --shadow:0 24px 70px rgba(57,45,33,.13);
-  --shadow-soft:0 16px 44px rgba(57,45,33,.09);
-  --teal:#0d9488;
-  --teal-dark:#0f766e;
-  --coral:#f9735b;
-  --amber:#d59f22;
-  --violet:#7c6ee6;
-  --rose:#e4587c;
-  --mint:#dff6ef;
-  --paper0:#fffaf0;
-  --paper1:#f1fbf7;
-  --paper2:#fff2ef;
-  --paper3:#f4f1ff;
-  --paper4:#fff8dc;
-  --paper5:#eef6ff;
+  --bg:#fbfaf7;
+  --panel:#fffefc;
+  --ink:#26221e;
+  --ink-strong:#24201c;
+  --muted:#69645f;
+  --soft:#9a958e;
+  --line:#e8e1d8;
+  --line2:#d8d0c6;
+  --green:#789469;
+  --green-soft:#f0f6ec;
+  --coral:#e86f52;
+  --coral-soft:#fff0ea;
+  --amber:#e6a650;
+  --amber-soft:#fff4df;
+  --sage:#afbea0;
+  --sage-soft:#f3f6ef;
+  --shadow:0 16px 42px rgba(48,38,28,.07);
 }
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   min-height:100vh;
-  background:
-    linear-gradient(120deg,rgba(255,255,255,.74),rgba(255,255,255,0) 38%),
-    linear-gradient(180deg,#f9f4ea 0%,#f7f3ec 42%,#f2eee8 100%);
   color:var(--ink);
-  font-family:Inter,-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',Arial,sans-serif;
-}
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background-image:
-    linear-gradient(rgba(32,33,38,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(32,33,38,.035) 1px,transparent 1px);
-  background-size:44px 44px;
-  mask-image:linear-gradient(to bottom,rgba(0,0,0,.65),transparent 78%);
+  background:
+    radial-gradient(circle at 12% 4%,rgba(232,111,82,.055),transparent 25%),
+    radial-gradient(circle at 84% 14%,rgba(120,148,105,.075),transparent 26%),
+    var(--bg);
+  font-family:"Plus Jakarta Sans",Inter,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
 }
 button,input,textarea{font:inherit}
 button{border:0}
-.shell{
-  width:min(1120px,calc(100% - 40px));
-  margin:0 auto;
-  padding:34px 0 72px;
-  position:relative;
+.app{
+  min-height:100vh;
+  display:grid;
+  grid-template-rows:74px 1fr 58px;
 }
 .topbar{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:18px;
-  padding:10px 0 26px;
+  gap:24px;
+  border-bottom:1px solid var(--line);
+  padding:0 40px;
+  background:rgba(251,250,248,.86);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  position:sticky;
+  top:0;
+  z-index:20;
 }
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
-  min-width:0;
+  gap:14px;
+  min-width:220px;
 }
-.brand-mark{
-  width:42px;
-  height:42px;
+.mark{
+  width:31px;
+  height:31px;
   display:grid;
   place-items:center;
-  border:1px solid rgba(13,148,136,.22);
-  border-radius:14px;
-  background:
-    linear-gradient(145deg,rgba(13,148,136,.16),rgba(249,115,91,.12)),
-    var(--panel);
-  box-shadow:0 10px 26px rgba(13,148,136,.12);
-  color:var(--teal-dark);
-}
-.brand-copy{line-height:1}
-.kicker{
-  display:block;
-  color:var(--quiet);
-  font-size:.68rem;
-  font-weight:700;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  margin-bottom:5px;
+  border-radius:8px;
+  background:var(--ink-strong);
+  color:#fff;
+  font-size:.86rem;
+  font-weight:850;
+  letter-spacing:-.03em;
 }
 .brand-name{
-  display:block;
-  font-size:1.08rem;
+  font-size:1.05rem;
   font-weight:850;
-  letter-spacing:-.02em;
+  letter-spacing:-.03em;
 }
-.pill{
+.nav{
+  display:flex;
+  align-items:center;
+  gap:2px;
+  height:100%;
+}
+.nav button{
+  height:100%;
+  padding:0 22px;
+  background:transparent;
+  color:var(--muted);
+  border-bottom:2px solid transparent;
+  cursor:pointer;
+  font-weight:650;
+}
+.nav button.active{
+  color:var(--ink);
+  border-bottom-color:var(--ink-strong);
+}
+.top-actions{
+  min-width:260px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+}
+.connection{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:rgba(255,253,248,.7);
   color:var(--muted);
-  padding:9px 13px;
-  font-size:.78rem;
-  font-weight:750;
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  box-shadow:0 10px 28px rgba(57,45,33,.06);
+  font-size:.88rem;
+  font-weight:650;
 }
 .dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--coral);
+}
+.dot.connected{background:var(--green)}
+.sheet-chip,.avatar{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:38px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--panel);
+  color:#343434;
+  padding:0 14px;
+  font-weight:650;
+}
+.avatar{
+  width:34px;
+  padding:0;
+  background:#f1efec;
+}
+.main{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 414px;
+  min-height:0;
+}
+.content{
+  padding:66px 60px 54px;
+}
+.hero-row{
+  display:block;
+  margin-bottom:30px;
+}
+h1{
+  font-size:clamp(4.6rem,6.1vw,5.9rem);
+  line-height:.9;
+  letter-spacing:0;
+  font-weight:900;
+  white-space:nowrap;
+  color:var(--ink-strong);
+}
+h1 .accent{
+  display:inline-block;
+  width:.14em;
+  height:.14em;
+  margin-left:.05em;
+  border-radius:50%;
+  background:var(--coral);
+  color:transparent;
+  vertical-align:.04em;
+}
+.sub{
+  margin-top:16px;
+  color:var(--muted);
+  font-size:1.12rem;
+  line-height:1.55;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(92px,128px));
+  align-items:end;
+  gap:0;
+  margin-top:42px;
+}
+.stat{
+  min-width:0;
+  padding:0 24px;
+  border-right:1px solid var(--line2);
+}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat strong{
+  display:block;
+  font-size:1.55rem;
+  line-height:1;
+  margin-bottom:8px;
+}
+.stat span{
+  color:var(--muted);
+  font-size:.84rem;
+}
+.board-tools{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin:30px 0 18px;
+}
+.board-tools p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+.filter-btn{
+  height:40px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--line2);
+  border-radius:11px;
+  background:#fff;
+  color:var(--ink);
+  padding:0 14px;
+  cursor:pointer;
+  font-weight:650;
+}
+.board{
+  border:1px solid var(--line2);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.board-meta{
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 32px;
+  color:var(--muted);
+  font-size:.86rem;
+  border-bottom:1px solid var(--line);
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+}
+.table th{
+  height:54px;
+  text-align:left;
+  color:var(--muted);
+  font-size:.86rem;
+  font-weight:600;
+  border-bottom:1px solid var(--line);
+}
+.table th:first-child,.table td:first-child{padding-left:32px}
+.table th:last-child,.table td:last-child{padding-right:28px;text-align:right}
+.table td{
+  height:65px;
+  border-bottom:1px solid var(--line);
+  font-size:.96rem;
+}
+.table tr:last-child td{border-bottom:0}
+.reminder-cell{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  font-weight:700;
+}
+.status-dot{
   width:8px;
   height:8px;
   border-radius:50%;
-  background:var(--coral);
-  box-shadow:0 0 0 5px rgba(249,115,91,.12);
+  background:#cfcfcf;
+  flex:0 0 auto;
 }
-.dot.connected{background:var(--teal);box-shadow:0 0 0 5px rgba(13,148,136,.14)}
-.hero{
-  display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);
-  gap:26px;
-  align-items:stretch;
-}
-.headline{
-  min-height:420px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  padding:44px;
-  border:1px solid var(--line);
-  border-radius:28px;
-  background:
-    linear-gradient(135deg,rgba(255,253,248,.94),rgba(255,253,248,.72)),
-    repeating-linear-gradient(-8deg,rgba(13,148,136,.045) 0 1px,transparent 1px 12px);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  position:relative;
-}
-.headline:after{
-  content:"";
-  position:absolute;
-  right:-22px;
-  bottom:-18px;
-  width:235px;
-  height:235px;
-  background:
-    conic-gradient(from 210deg,var(--teal),var(--violet),var(--coral),var(--amber),var(--teal));
-  opacity:.13;
-  clip-path:polygon(50% 0,61% 34%,98% 35%,68% 56%,79% 91%,50% 70%,21% 91%,32% 56%,2% 35%,39% 34%);
-}
-.headline-main{position:relative;z-index:1}
-h1{
-  max-width:720px;
-  font-size:clamp(3.1rem,8vw,6.8rem);
-  line-height:.86;
-  letter-spacing:0;
-  font-weight:900;
-}
-h1 span{
-  display:block;
-  color:var(--teal-dark);
-  font-family:Georgia,'Times New Roman',serif;
-  font-style:italic;
-  font-weight:500;
-}
-.lede{
-  max-width:550px;
-  color:var(--muted);
-  margin-top:22px;
-  font-size:1.02rem;
-  line-height:1.75;
-}
-.hero-meta{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  position:relative;
-  z-index:1;
-}
-.meta-card{
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:rgba(255,255,255,.5);
-  padding:14px;
-}
-.meta-card strong{
-  display:block;
-  font-size:1.08rem;
-  letter-spacing:-.02em;
-  margin-bottom:4px;
-}
-.meta-card span{
-  color:var(--quiet);
-  font-size:.72rem;
-  font-weight:750;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-.workbench{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-.setup{
-  display:block;
-}
-.setup-inner,.compose,.empty-panel{
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:var(--panel-soft);
-  box-shadow:var(--shadow-soft);
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
-}
-.setup-inner{
-  padding:18px;
-}
-.setup-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:12px;
-}
-.setup-lbl,.section-label{
-  color:var(--quiet);
-  font-size:.7rem;
-  font-weight:850;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-.setup-chip{
-  color:var(--teal-dark);
-  background:rgba(13,148,136,.1);
-  border:1px solid rgba(13,148,136,.18);
-  border-radius:999px;
-  padding:5px 9px;
-  font-size:.68rem;
-  font-weight:800;
-}
-.setup-row{
-  display:flex;
-  gap:10px;
-}
-.setup-row input{
-  width:100%;
-  min-width:0;
-  height:46px;
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:rgba(255,255,255,.72);
-  color:var(--ink);
-  outline:none;
-  padding:0 14px;
-  font-size:.88rem;
-  transition:border-color .18s,box-shadow .18s,background .18s;
-}
-.setup-row input:focus,.compose textarea:focus{
-  border-color:rgba(13,148,136,.42);
-  box-shadow:0 0 0 4px rgba(13,148,136,.12);
-  background:#fff;
-}
-.btn-sm,.btn-post,.btn-cancel,.btn-del-confirm{
+.status-dot.hot{background:#ff8a72}
+.status-dot.warm{background:#f0bd64}
+.status-dot.calm{background:#b5c9a9}
+.nudge{
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  min-width:28px;
+  height:28px;
+  border-radius:9px;
+  background:#f3f3f3;
+  color:#454545;
+  font-weight:750;
+}
+.nudge.hot{background:var(--coral-soft);color:#d55236}
+.nudge.warm{background:var(--amber-soft);color:#b16f14}
+.nudge.calm{background:var(--sage-soft);color:#607d4f}
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
   gap:8px;
-  min-height:42px;
-  border-radius:15px;
-  cursor:pointer;
-  font-weight:850;
-  letter-spacing:.02em;
-  transition:transform .16s,box-shadow .16s,background .16s,border-color .16s,color .16s,opacity .16s;
-  white-space:nowrap;
 }
-.btn-sm{
-  padding:0 16px;
-  background:var(--ink);
-  color:#fffaf2;
-  box-shadow:0 12px 24px rgba(32,33,38,.16);
-}
-.btn-sm:hover,.btn-post:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(13,148,136,.2)}
-.btn-sm:active,.btn-post:active,.bump:active,.del:active,.btn-cancel:active,.btn-del-confirm:active{transform:translateY(0) scale(.98)}
-.compose{
-  overflow:hidden;
-}
-.compose-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:18px 18px 0;
-}
-.compose-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  color:var(--coral);
-  background:rgba(249,115,91,.1);
-  border:1px solid rgba(249,115,91,.18);
-  border-radius:999px;
-  padding:6px 10px;
-  font-size:.7rem;
-  font-weight:850;
-}
-.compose textarea{
-  display:block;
-  width:100%;
-  min-height:178px;
-  padding:20px 18px 14px;
-  border:1px solid transparent;
+.row-btn{
+  height:32px;
+  min-width:32px;
+  border-radius:9px;
   background:transparent;
-  color:var(--ink);
-  resize:none;
-  outline:none;
-  line-height:1.68;
-  font-size:1.06rem;
-  font-weight:600;
-}
-.compose textarea::placeholder{color:#c4bbb0;font-weight:650}
-.compose-bar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:14px 18px 18px;
-}
-.cc{
-  color:var(--quiet);
-  font-size:.74rem;
-  font-weight:800;
-}
-.btn-post{
-  min-width:132px;
-  padding:0 19px;
-  color:#fff;
-  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
-  box-shadow:0 14px 26px rgba(13,148,136,.2);
-}
-.btn-post:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
-.toolbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  margin:34px 0 16px;
-}
-.board-title{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.board-title h2{
-  font-size:1.12rem;
-  letter-spacing:-.02em;
-}
-.rule{
-  width:42px;
-  height:2px;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--coral),var(--teal));
-}
-.board-count{
-  color:var(--muted);
-  font-size:.78rem;
-  font-weight:800;
-}
-.board{
-  columns:3 250px;
-  column-gap:18px;
-}
-.note{
-  break-inside:avoid;
-  margin:0 0 18px;
-  padding:20px 18px 16px;
-  border:1px solid var(--line);
-  border-radius:22px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 12px 30px rgba(57,45,33,.07);
-  transition:transform .24s cubic-bezier(.22,.8,.2,1),box-shadow .24s,border-color .24s;
-}
-.note:before{
-  content:"";
-  position:absolute;
-  inset:0 0 auto 0;
-  height:5px;
-  background:var(--accent,var(--teal));
-  opacity:.9;
-}
-.note:hover{
-  transform:translateY(-7px);
-  border-color:var(--line-strong);
-  box-shadow:0 22px 48px rgba(57,45,33,.12);
-  z-index:2;
-}
-.note.c0{background:var(--paper0);--accent:var(--amber)}
-.note.c1{background:var(--paper1);--accent:var(--teal)}
-.note.c2{background:var(--paper2);--accent:var(--coral)}
-.note.c3{background:var(--paper3);--accent:var(--violet)}
-.note.c4{background:var(--paper4);--accent:#e6b84f}
-.note.c5{background:var(--paper5);--accent:#4f9ccf}
-.note-pin{
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  position:absolute;
-  top:15px;
-  right:17px;
-  background:radial-gradient(circle at 35% 35%,#fff,rgba(255,255,255,0) 34%),var(--accent);
-  box-shadow:0 7px 16px rgba(57,45,33,.16);
-}
-.note-body{
-  position:relative;
-  z-index:1;
-  color:#2b2926;
-  font-size:.98rem;
-  font-weight:650;
-  line-height:1.7;
-  letter-spacing:0;
-  margin:10px 20px 18px 0;
-  white-space:pre-wrap;
-  word-break:break-word;
-}
-.note-foot{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-.note-time{
-  color:var(--quiet);
-  font-size:.72rem;
-  font-weight:800;
-}
-.note-actions{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-.bump,.del{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(32,33,38,.1);
-  background:rgba(255,255,255,.55);
   color:var(--muted);
   cursor:pointer;
-  transition:transform .15s,background .15s,color .15s,border-color .15s;
-}
-.bump{
-  gap:6px;
-  min-width:48px;
-  height:30px;
-  border-radius:999px;
-  padding:0 10px;
-  font-size:.76rem;
-  font-weight:900;
-}
-.bump:hover{background:#fff;border-color:rgba(13,148,136,.25);color:var(--teal-dark)}
-.bump.warm{color:var(--amber);border-color:rgba(213,159,34,.28);background:rgba(255,248,220,.78)}
-.bump.hot{color:var(--rose);border-color:rgba(228,88,124,.3);background:rgba(255,238,244,.85)}
-.del{
-  width:30px;
-  height:30px;
-  border-radius:10px;
-}
-.del:hover{background:rgba(228,88,124,.1);border-color:rgba(228,88,124,.25);color:#c93462}
-.status-wrap{
-  padding:34px 0 10px;
-}
-.empty-panel{
-  min-height:245px;
-  padding:26px;
-  display:grid;
-  grid-template-columns:minmax(0,.9fr) minmax(260px,1.1fr);
-  gap:22px;
-  align-items:center;
-}
-.empty-copy h2{
-  font-size:1.55rem;
-  line-height:1.08;
-  letter-spacing:-.03em;
-  margin-bottom:12px;
-}
-.empty-copy p{
-  color:var(--muted);
-  line-height:1.7;
-  font-size:.92rem;
-}
-.sample-stack{
-  display:grid;
-  gap:10px;
-}
-.sample{
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:#fff;
-  padding:13px 15px;
-  box-shadow:0 12px 28px rgba(57,45,33,.06);
-  color:#34312d;
-  font-size:.86rem;
   font-weight:750;
 }
-.sample:nth-child(2){transform:translateX(18px);background:var(--paper1)}
-.sample:nth-child(3){transform:translateX(7px);background:var(--paper3)}
+.row-btn:hover{background:#f4f1ee;color:var(--ink)}
+.empty-state{
+  padding:50px 34px;
+  text-align:left;
+}
+.empty-state h2{
+  font-size:1.18rem;
+  letter-spacing:-.02em;
+  margin-bottom:8px;
+}
+.empty-state p{
+  color:var(--muted);
+  line-height:1.55;
+  margin-bottom:20px;
+}
+.empty-lines{
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--line);
+}
+.empty-line{
+  height:56px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:#a0a0a0;
+  border-bottom:1px solid var(--line);
+}
+.empty-line:before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#ddd;
+}
+.side{
+  border-left:1px solid var(--line);
+  background:linear-gradient(180deg,#fff,#fbfaf8);
+  padding:42px 34px 36px;
+}
+.compose-card,.sheet-card{
+  border:1px solid var(--line2);
+  border-radius:16px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.compose-card{
+  padding:22px;
+}
+.card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:22px;
+}
+.card-head h2{
+  font-size:1.1rem;
+  font-weight:800;
+  letter-spacing:-.01em;
+}
+.collapse{
+  color:var(--muted);
+  font-size:1.2rem;
+}
+.field{
+  margin-bottom:20px;
+}
+.field label{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-bottom:10px;
+  color:var(--ink);
+  font-size:.92rem;
+  font-weight:650;
+}
+textarea,input{
+  width:100%;
+  border:1px solid var(--line2);
+  border-radius:12px;
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+}
+textarea{
+  min-height:170px;
+  resize:none;
+  padding:16px;
+  line-height:1.55;
+  font-size:.96rem;
+}
+textarea::placeholder,input::placeholder{color:#9a9a9a}
+textarea:focus,input:focus{border-color:#adaba7;box-shadow:0 0 0 4px rgba(39,39,39,.05)}
+.textarea-meta{
+  display:flex;
+  justify-content:flex-end;
+  color:var(--muted);
+  font-size:.82rem;
+  margin-top:-34px;
+  padding-right:13px;
+  pointer-events:none;
+}
+.url-row{
+  display:grid;
+  grid-template-columns:1fr 88px;
+  gap:9px;
+}
+.url-row input{
+  height:42px;
+  padding:0 12px;
+  font-size:.86rem;
+}
+.connect-btn,.add-btn,.cancel-btn,.delete-confirm{
+  height:46px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:750;
+}
+.connect-btn{
+  background:#f1eee9;
+  color:var(--ink);
+}
+.add-btn{
+  width:100%;
+  background:var(--ink-strong);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(33,29,25,.14);
+}
+.add-btn:hover,.connect-btn:hover{transform:translateY(-1px)}
+.hint{
+  margin-top:14px;
+  color:var(--muted);
+  text-align:center;
+  font-size:.83rem;
+}
+.sheet-card{
+  margin-top:24px;
+  padding:22px;
+  background:linear-gradient(135deg,var(--green-soft),#fffefc);
+  overflow:hidden;
+}
+.sheet-status{
+  display:flex;
+  gap:13px;
+  align-items:flex-start;
+}
+.check{
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#dfead8;
+  color:var(--green);
+  font-weight:850;
+}
+.sheet-status h3{
+  font-size:1rem;
+  margin-bottom:5px;
+}
+.sheet-status p{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.45;
+}
+.sheet-ghost{
+  height:70px;
+  margin-top:22px;
+  border-radius:10px;
+  background:
+    linear-gradient(90deg,rgba(111,145,93,.08) 1px,transparent 1px),
+    linear-gradient(rgba(111,145,93,.08) 1px,transparent 1px),
+    rgba(255,255,255,.52);
+  background-size:26px 26px;
+}
+.foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border-top:1px solid var(--line);
+  padding:0 38px;
+  color:var(--muted);
+  background:#fff;
+}
+.foot strong{color:var(--ink)}
+.snack{
+  position:fixed;
+  left:50%;
+  bottom:22px;
+  z-index:999;
+  transform:translateX(-50%) translateY(86px);
+  border:1px solid var(--line2);
+  border-radius:999px;
+  background:var(--ink-strong);
+  color:#fff;
+  padding:11px 16px;
+  font-size:.84rem;
+  font-weight:750;
+  box-shadow:0 16px 38px rgba(0,0,0,.18);
+  transition:transform .24s cubic-bezier(.34,1.56,.64,1);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.snack.show{transform:translateX(-50%) translateY(0)}
 .veil{
   display:none;
   position:fixed;
@@ -523,42 +523,42 @@ h1 span{
   align-items:center;
   justify-content:center;
   padding:22px;
-  background:rgba(32,33,38,.36);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  background:rgba(0,0,0,.24);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
 }
 .veil.open{display:flex}
 .modal{
   width:min(390px,100%);
-  border:1px solid rgba(255,255,255,.42);
-  border-radius:26px;
-  background:#fffdf8;
+  border:1px solid var(--line2);
+  border-radius:14px;
+  background:#fff;
   padding:22px;
-  box-shadow:0 26px 80px rgba(21,19,16,.25);
+  box-shadow:var(--shadow);
 }
 .modal-eye{
-  color:var(--rose);
+  color:#c8513d;
   font-size:.72rem;
-  font-weight:900;
-  letter-spacing:.14em;
+  font-weight:750;
+  letter-spacing:.08em;
   text-transform:uppercase;
   margin-bottom:8px;
 }
 .modal-title{
   font-size:1.35rem;
-  font-weight:900;
+  font-weight:800;
   letter-spacing:-.03em;
   margin-bottom:12px;
 }
 .modal-preview{
-  max-height:130px;
+  max-height:126px;
   overflow:hidden;
   border:1px solid var(--line);
-  border-radius:18px;
-  background:var(--paper2);
-  color:#3d3430;
-  padding:14px;
-  line-height:1.65;
+  border-radius:10px;
+  background:#fbfaf8;
+  color:var(--muted);
+  padding:13px;
+  line-height:1.6;
   margin-bottom:16px;
   display:-webkit-box;
   -webkit-line-clamp:4;
@@ -569,160 +569,168 @@ h1 span{
   justify-content:flex-end;
   gap:10px;
 }
-.btn-cancel{
-  padding:0 16px;
-  border:1px solid var(--line);
+.cancel-btn{
+  padding:0 15px;
   background:#fff;
-  color:var(--muted);
+  color:var(--ink);
+  border:1px solid var(--line2);
 }
-.btn-cancel:hover{border-color:var(--line-strong);color:var(--ink)}
-.btn-del-confirm{
-  padding:0 17px;
-  background:var(--rose);
+.delete-confirm{
+  padding:0 16px;
+  background:#c8513d;
   color:#fff;
-  box-shadow:0 13px 26px rgba(228,88,124,.18);
 }
-.btn-del-confirm:hover{background:#ca3d64}
-.snack{
-  position:fixed;
-  left:50%;
-  bottom:25px;
-  z-index:999;
-  transform:translateX(-50%) translateY(86px);
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:999px;
-  background:rgba(32,33,38,.92);
-  color:#fffaf2;
-  padding:12px 17px;
-  font-size:.82rem;
-  font-weight:850;
-  box-shadow:0 18px 42px rgba(32,33,38,.22);
-  transition:transform .28s cubic-bezier(.34,1.56,.64,1);
-  white-space:nowrap;
-  pointer-events:none;
+@media(max-width:1040px){
+  .main{grid-template-columns:1fr}
+  .side{border-left:0;border-top:1px solid var(--line)}
+  .content{padding:48px 34px}
+  .hero-row{grid-template-columns:1fr}
+  .stats{margin-top:10px}
 }
-.snack.show{transform:translateX(-50%) translateY(0)}
-@keyframes burst{
-  0%{transform:translate(0,0) rotate(0) scale(1);opacity:1}
-  100%{transform:translate(var(--tx),var(--ty)) rotate(var(--rot)) scale(.25);opacity:0}
-}
-.particle{
-  position:fixed;
-  pointer-events:none;
-  z-index:1000;
-  animation:burst .72s cubic-bezier(.25,.46,.45,.94) forwards;
-}
-@media(max-width:880px){
-  .hero{grid-template-columns:1fr}
-  .headline{min-height:360px}
-}
-@media(max-width:640px){
-  .shell{width:min(100% - 28px,1120px);padding-top:18px}
-  .topbar{align-items:flex-start}
-  .pill{font-size:0;width:42px;height:42px;padding:0;justify-content:center}
-  .headline{padding:30px 24px;border-radius:24px;min-height:345px}
-  .hero-meta{grid-template-columns:1fr}
-  .setup-row{flex-direction:column}
-  .btn-sm,.btn-post{width:100%}
-  .compose-bar{align-items:stretch;flex-direction:column}
-  .toolbar{align-items:flex-start;flex-direction:column}
-  .empty-panel{grid-template-columns:1fr;padding:22px}
-  .sample:nth-child(2),.sample:nth-child(3){transform:none}
-  .board{columns:1}
-  h1{font-size:3.3rem}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+@media(max-width:720px){
+  .app{grid-template-rows:auto 1fr auto}
+  .topbar{padding:14px 18px;align-items:center}
+  .nav{display:none}
+  .top-actions{min-width:0}
+  .sheet-chip,.connection span{display:none}
+  .content{padding:36px 18px 28px}
+  h1{font-size:3.08rem;white-space:normal;line-height:.94}
+  .sub{font-size:1rem;margin-top:14px}
+  .stats{
+    width:100%;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px 0;
+    margin-top:34px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+  }
+  .stat{padding:0 18px;border-right:1px solid var(--line)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(3){padding-left:0}
+  .stat:last-child{border-right:0}
+  .stat strong{font-size:1.48rem}
+  .board-tools{align-items:stretch;flex-direction:column;margin-top:26px}
+  .filter-btn{width:max-content}
+  .board-meta{
+    min-height:auto;
+    align-items:flex-start;
+    flex-direction:column;
+    padding:16px 18px;
+  }
+  .table th:nth-child(3),.table td:nth-child(3){display:none}
+  .table th:first-child,.table td:first-child{padding-left:18px}
+  .table th:last-child,.table td:last-child{padding-right:14px}
+  .table th:nth-child(2),.table td:nth-child(2){text-align:center}
+  .reminder-cell{gap:12px}
+  .side{padding:28px 18px}
+  .compose-card,.sheet-card{border-radius:14px}
+  .url-row{grid-template-columns:1fr}
+  .foot{padding:16px 18px;flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
 <body>
-<main class="shell">
-  <nav class="topbar" aria-label="Primary">
+<main class="app">
+  <header class="topbar">
     <div class="brand">
-      <div class="brand-mark" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M4.2 7.5l3.5 2"></path><path d="M16.3 14.5l3.5 2"></path><path d="M4.2 16.5l3.5-2"></path><path d="M16.3 9.5l3.5-2"></path><circle cx="12" cy="12" r="4"></circle>
-        </svg>
-      </div>
-      <div class="brand-copy">
-        <span class="kicker">Reminders</span>
-        <span class="brand-name">Stay aware.</span>
-      </div>
+      <div class="mark">S.</div>
+      <div class="brand-name">Stay aware.</div>
     </div>
-    <div class="pill"><span class="dot" id="statusDot"></span><span id="statusText">Not connected</span></div>
-  </nav>
-
-  <section class="hero" aria-label="Reminder board">
-    <div class="headline">
-      <div class="headline-main">
-        <h1>Catch it. <span>Keep it.</span></h1>
-        <p class="lede">A gentle board for thoughts that deserve to stay visible: tiny nudges, important tasks, and ideas you do not want slipping into the background.</p>
-      </div>
-      <div class="hero-meta" aria-label="App highlights">
-        <div class="meta-card"><strong id="metaNotes">0</strong><span>notes</span></div>
-        <div class="meta-card"><strong id="metaReminds">0</strong><span>nudges</span></div>
-        <div class="meta-card"><strong>300</strong><span>chars</span></div>
-      </div>
+    <nav class="nav" aria-label="Primary">
+      <button class="active" type="button">Board</button>
+      <button type="button">Calendar</button>
+      <button type="button">Archive</button>
+      <button type="button">Settings</button>
+    </nav>
+    <div class="top-actions">
+      <div class="connection"><span class="dot" id="statusDot"></span><span id="statusText">Not connected</span></div>
+      <button class="sheet-chip" type="button">Google Sheet</button>
+      <div class="avatar">K</div>
     </div>
+  </header>
 
-    <div class="workbench">
-      <div class="setup" id="setupWrap">
-        <div class="setup-inner">
-          <div class="setup-head">
-            <span class="setup-lbl">Google Apps Script</span>
-            <span class="setup-chip">private sheet sync</span>
+  <section class="main">
+    <section class="content">
+      <div class="hero-row">
+        <div>
+          <h1>Stay aware<span class="accent">.</span></h1>
+          <p class="sub">See what matters. Nudge less. Focus more.</p>
+        </div>
+        <div class="stats" aria-label="Board stats">
+          <div class="stat"><strong id="metaNotes">0</strong><span>Total</span></div>
+          <div class="stat"><strong id="metaPinned">0</strong><span>Pinned</span></div>
+          <div class="stat"><strong id="metaDue">0</strong><span>Due soon</span></div>
+          <div class="stat"><strong id="metaReminds">0</strong><span>All nudges</span></div>
+        </div>
+      </div>
+
+      <div class="board-tools">
+        <p>Sorted by nudge count</p>
+        <button class="filter-btn" type="button">Filter</button>
+      </div>
+
+      <section class="board" aria-label="Reminder board">
+        <div class="board-meta">
+          <span id="boardSummary">Connect your sheet to load reminders</span>
+          <span id="boardUpdated">Last updated just now</span>
+        </div>
+        <div id="boardWrap" aria-live="polite">
+          <div class="empty-state">
+            <h2>Ready when you are.</h2>
+            <p>Connect your Google Sheet, then add your first reminder.</p>
+            <div class="empty-lines">
+              <div class="empty-line">Review launch checklist</div>
+              <div class="empty-line">Send invoice to client</div>
+              <div class="empty-line">Book train tickets</div>
+            </div>
           </div>
-          <div class="setup-row">
-            <input type="text" id="urlInput" placeholder="https://script.google.com/macros/s/.../exec" aria-label="Apps Script URL">
-            <button class="btn-sm" onclick="saveUrl()">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l2.1-2.1a5 5 0 0 0-7.1-7.1L11 4.9"></path><path d="M14 11a5 5 0 0 0-7.1 0l-2.1 2.1a5 5 0 0 0 7.1 7.1L13 19.1"></path></svg>
-              Connect
-            </button>
+        </div>
+      </section>
+    </section>
+
+    <aside class="side">
+      <section class="compose-card">
+        <div class="card-head">
+          <h2>New reminder</h2>
+          <span class="collapse">−</span>
+        </div>
+
+        <div class="field">
+          <textarea id="noteInput" placeholder="What's on your mind?" maxlength="300"></textarea>
+          <div class="textarea-meta" id="cc">0 / 300</div>
+        </div>
+
+        <div class="field" id="setupWrap">
+          <label for="urlInput">Google Apps Script</label>
+          <div class="url-row">
+            <input type="text" id="urlInput" placeholder="https://script.google.com/...">
+            <button class="connect-btn" onclick="saveUrl()">Connect</button>
           </div>
         </div>
-      </div>
 
-      <div class="compose">
-        <div class="compose-top">
-          <span class="section-label">New reminder</span>
-          <span class="compose-badge">quick capture</span>
+        <button class="add-btn" id="pinBtn" onclick="addNote()">Add to board</button>
+        <div class="hint">Press Enter to save</div>
+      </section>
+
+      <section class="sheet-card">
+        <div class="sheet-status">
+          <div class="check">✓</div>
+          <div>
+            <h3 id="sheetTitle">Sheet status</h3>
+            <p id="sheetText">Connect your sheet to sync reminders.</p>
+          </div>
         </div>
-        <textarea id="noteInput" placeholder="Write the thing your future self should not miss..." maxlength="300"></textarea>
-        <div class="compose-bar">
-          <span class="cc" id="cc">0 / 300</span>
-          <button class="btn-post" id="pinBtn" onclick="addNote()">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
-            Pin it
-          </button>
-        </div>
-      </div>
-    </div>
+        <div class="sheet-ghost" aria-hidden="true"></div>
+      </section>
+    </aside>
   </section>
 
-  <section class="toolbar" id="boardHeader" style="display:none" aria-label="Board summary">
-    <div class="board-title">
-      <div class="rule"></div>
-      <h2>On the board</h2>
-    </div>
-    <div class="board-count" id="boardCount">0 notes</div>
-  </section>
-
-  <section id="boardWrap" aria-live="polite">
-    <div class="status-wrap">
-      <div class="empty-panel">
-        <div class="empty-copy">
-          <h2>Connect your sheet to begin.</h2>
-          <p>Your notes will appear here as a tactile board, sorted by how often you ask to be reminded.</p>
-        </div>
-        <div class="sample-stack" aria-hidden="true">
-          <div class="sample">Review the launch checklist before Friday.</div>
-          <div class="sample">Send the invoice after the client replies.</div>
-          <div class="sample">Keep the homepage beautifully simple.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer class="foot">
+    <strong>Stay aware.</strong>
+    <span>Built for calm and clarity.</span>
+    <span>Tips</span>
+  </footer>
 </main>
 
 <div class="veil" id="veil" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -731,8 +739,8 @@ h1 span{
     <div class="modal-title" id="modalTitle">Remove this?</div>
     <div class="modal-preview" id="modalPreview"></div>
     <div class="modal-btns">
-      <button class="btn-cancel" onclick="closeModal()">Keep it</button>
-      <button class="btn-del-confirm" onclick="confirmDelete()">Delete</button>
+      <button class="cancel-btn" onclick="closeModal()">Keep it</button>
+      <button class="delete-confirm" onclick="confirmDelete()">Delete</button>
     </div>
   </div>
 </div>
@@ -740,7 +748,6 @@ h1 span{
 <div class="snack" id="snack"></div>
 
 <script>
-const COLS=['c0','c1','c2','c3','c4','c5'];
 let notes=[];
 let pendingDeleteId=null;
 let API=localStorage.getItem('nts_url')||'';
@@ -757,11 +764,19 @@ function boot(){
   document.getElementById('noteInput').addEventListener('input',function(){
     document.getElementById('cc').textContent=this.value.length+' / 300';
   });
+  document.getElementById('noteInput').addEventListener('keydown',function(e){
+    if(e.key==='Enter' && (e.metaKey||e.ctrlKey)){
+      e.preventDefault();
+      addNote();
+    }
+  });
 }
 
 function setConnected(value){
   document.getElementById('statusDot').classList.toggle('connected',value);
   document.getElementById('statusText').textContent=value?'Connected':'Not connected';
+  document.getElementById('sheetTitle').textContent=value?'All good':'Sheet status';
+  document.getElementById('sheetText').textContent=value?'Your sheet is connected and ready.':'Connect your sheet to sync reminders.';
 }
 
 function saveUrl(){
@@ -789,90 +804,73 @@ function jsonpFetch(url){
 }
 
 async function load(){
-  setStatus('Loading your board...');
+  setStatus('Loading reminders...');
   try{
     const data=await jsonpFetch(API+'?action=get');
     notes=data.notes||[];
     render(notes);
   }catch(e){
-    setStatus('Could not reach the sheet. Redeploy your Apps Script as a new version, then try again.');
+    setStatus('Could not reach the sheet. Redeploy your Apps Script and try again.');
   }
 }
 
 function render(list){
   renderMeta(list);
-  const bh=document.getElementById('boardHeader');
+  document.getElementById('boardSummary').textContent=list.length?'Sorted by nudge count':'No reminders yet';
+  document.getElementById('boardUpdated').textContent='Last updated just now';
   const wrap=document.getElementById('boardWrap');
   if(!list.length){
-    bh.style.display='none';
-    wrap.innerHTML=`<div class="status-wrap">
-      <div class="empty-panel">
-        <div class="empty-copy">
-          <h2>Nothing here yet.</h2>
-          <p>Add your first reminder above. The board will automatically place frequent nudges near the top.</p>
-        </div>
-        <div class="sample-stack" aria-hidden="true">
-          <div class="sample">Book the train ticket.</div>
-          <div class="sample">Check the renewal date.</div>
-          <div class="sample">Polish the little details.</div>
-        </div>
+    wrap.innerHTML=`<div class="empty-state">
+      <h2>Ready when you are.</h2>
+      <p>Add your first reminder from the panel on the right.</p>
+      <div class="empty-lines">
+        <div class="empty-line">Review launch checklist</div>
+        <div class="empty-line">Send invoice to client</div>
+        <div class="empty-line">Book train tickets</div>
       </div>
     </div>`;
     return;
   }
-  bh.style.display='flex';
-  document.getElementById('boardCount').textContent=list.length+' '+(list.length===1?'note':'notes');
   const sorted=[...list].sort((a,b)=>{
     const rc=x=>parseInt(x.remind_count)||0;
     return rc(b)!==rc(a)?rc(b)-rc(a):new Date(b.timestamp)-new Date(a.timestamp);
   });
-  const board=document.createElement('div');
-  board.className='board';
-  board.innerHTML=sorted.map((n,i)=>{
-    const c=COLS[i%COLS.length];
+  const rows=sorted.map(n=>{
     const rc=parseInt(n.remind_count)||0;
-    const cls=rc>=5?'hot':rc>=2?'warm':'';
-    return`<article class="note ${c}">
-      <div class="note-pin"></div>
-      <div class="note-body">${esc(n.content)}</div>
-      <div class="note-foot">
-        <span class="note-time">${fmt(n.timestamp)}</span>
-        <div class="note-actions">
-          <button class="bump ${cls}" onclick="bump('${n.id}')" title="Remind me again" aria-label="Remind me again">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"></path><path d="M21 3v7h-7"></path></svg>
-            <span>${rc}</span>
-          </button>
-          <button class="del" onclick="askDelete('${n.id}')" title="Delete note" aria-label="Delete note">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
-          </button>
+    const level=rc>=5?'hot':rc>=2?'warm':rc>=1?'calm':'';
+    return`<tr>
+      <td><div class="reminder-cell"><span class="status-dot ${level}"></span>${esc(n.content)}</div></td>
+      <td><span class="nudge ${level}">${rc}</span></td>
+      <td>${fmt(n.timestamp)}</td>
+      <td>
+        <div class="actions">
+          <button class="row-btn" onclick="bump('${n.id}')" title="Remind me again">Pin</button>
+          <button class="row-btn" onclick="askDelete('${n.id}')" title="Delete">•••</button>
         </div>
-      </div>
-    </article>`;
+      </td>
+    </tr>`;
   }).join('');
-  wrap.innerHTML='';
-  wrap.appendChild(board);
+  wrap.innerHTML=`<table class="table">
+    <thead><tr><th>Reminder</th><th>Nudges</th><th>Updated</th><th>Actions</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
 }
 
 function renderMeta(list){
   const total=list.reduce((sum,n)=>sum+(parseInt(n.remind_count)||0),0);
+  const due=list.filter(n=>(parseInt(n.remind_count)||0)>=3).length;
   document.getElementById('metaNotes').textContent=list.length;
+  document.getElementById('metaPinned').textContent=list.filter(n=>(parseInt(n.remind_count)||0)>0).length;
+  document.getElementById('metaDue').textContent=due;
   document.getElementById('metaReminds').textContent=total;
 }
 
 function setStatus(msg){
-  document.getElementById('boardHeader').style.display='none';
-  document.getElementById('boardWrap').innerHTML=`<div class="status-wrap">
-    <div class="empty-panel">
-      <div class="empty-copy">
-        <h2>${esc(msg)}</h2>
-        <p>The board is ready when your Apps Script endpoint responds.</p>
-      </div>
-      <div class="sample-stack" aria-hidden="true">
-        <div class="sample">Tiny tasks deserve a beautiful place.</div>
-        <div class="sample">Frequent reminders rise to the top.</div>
-        <div class="sample">Everything stays lightweight and fast.</div>
-      </div>
-    </div>
+  document.getElementById('boardSummary').textContent=msg;
+  document.getElementById('boardUpdated').textContent='';
+  document.getElementById('boardWrap').innerHTML=`<div class="empty-state">
+    <h2>${esc(msg)}</h2>
+    <p>Your board will appear here when the sheet responds.</p>
   </div>`;
 }
 
@@ -882,17 +880,16 @@ async function addNote(){
   if(!API){toast('Connect your sheet first');return}
   const btn=document.getElementById('pinBtn');
   btn.disabled=true;
-  btn.innerHTML='Pinning...';
+  btn.textContent='Adding...';
   try{
     await fetch(API,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'add',content:txt,timestamp:new Date().toISOString(),parent_id:'',remind_count:0})});
     document.getElementById('noteInput').value='';
     document.getElementById('cc').textContent='0 / 300';
-    confetti(btn);
-    toast('Pinned');
+    toast('Added');
     setTimeout(load,900);
   }catch(e){toast('Could not save')}
   btn.disabled=false;
-  btn.innerHTML='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>Pin it';
+  btn.textContent='Add to board';
 }
 
 async function bump(id){
@@ -927,33 +924,6 @@ function toast(msg){
   setTimeout(()=>s.classList.remove('show'),2400);
 }
 
-function confetti(originEl){
-  const rect=originEl.getBoundingClientRect();
-  const cx=rect.left+rect.width/2;
-  const cy=rect.top+rect.height/2;
-  const colors=['#0d9488','#f9735b','#7c6ee6','#d59f22','#e4587c','#64b5f6'];
-  for(let i=0;i<22;i++){
-    const p=document.createElement('div');
-    p.className='particle';
-    const angle=Math.random()*Math.PI*2;
-    const dist=42+Math.random()*70;
-    const size=4+Math.random()*6;
-    p.style.cssText=`
-      left:${cx-size/2}px;top:${cy-size/2}px;
-      width:${size}px;height:${size}px;
-      background:${colors[Math.floor(Math.random()*colors.length)]};
-      border-radius:${Math.random()>.55?'50%':'3px'};
-      --tx:${Math.cos(angle)*dist}px;
-      --ty:${Math.sin(angle)*dist}px;
-      --rot:${Math.random()*280-140}deg;
-      animation-duration:${0.5+Math.random()*0.45}s;
-      animation-delay:${Math.random()*0.08}s;
-    `;
-    document.body.appendChild(p);
-    p.addEventListener('animationend',()=>p.remove());
-  }
-}
-
 function askDelete(id){
   const n=notes.find(x=>x.id===id);
   if(!n)return;
@@ -982,7 +952,6 @@ async function confirmDelete(){
 document.getElementById('veil').addEventListener('click',function(e){
   if(e.target===this)closeModal();
 });
-
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape')closeModal();
 });
